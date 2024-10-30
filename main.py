@@ -20,10 +20,10 @@ class Phone(Field):
     def __init__(self, phone):
         self.phone = phone
         super().__init__(phone)
-        if not self.validate():
+        if not self.__validate():
             raise ValueError
 
-    def validate (self) -> bool:
+    def __validate (self) -> bool:
          return bool(re.fullmatch(r'\d{10}', self.phone))
          
 
